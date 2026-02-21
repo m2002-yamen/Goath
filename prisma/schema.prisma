@@ -1,0 +1,68 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+provider = "postgresql"}
+
+
+model Registration {
+  id                 String   @id @default(cuid())
+  createdAt          DateTime @default(now())
+
+  // Head of household
+  firstName          String
+  fatherName         String
+  grandfatherName    String
+  familyName         String
+  nationalId         String
+
+  // Personal
+  gender             String
+  dobISO             String
+  age                Int?
+
+  // Wife (optional)
+  wifeId             String?
+  wifeName           String?
+  wifeDobISO         String?
+
+  // Contact
+  phonePrimary       String
+  phoneAlternative   String?
+
+  // Current location (adjust names to match your fields)
+  governorate        String?
+  region             String?
+  neighborhood       String?
+  residenceType      String?
+
+  // Family info
+  dependents_0_2     String?
+  dependents_3_5     String?
+  dependents_6_18    String?
+  dependents_19_59   String?
+  dependents_60_plus String?
+
+  males_0_2          String?
+  males_3_5          String?
+  males_6_18         String?
+  males_19_59        String?
+  males_60_plus      String?
+
+  chronicCount       String?
+  disabilityCount    String?
+
+  breadwinnerJob     String?
+  housingStatus      String?
+
+  // Priorities + other needs
+  priorityNeedsJson  String?
+  otherNeeds         String?
+
+  // Transfer
+  paymentMethod      String?
+  paymentIdentifier  String?
+}
+
