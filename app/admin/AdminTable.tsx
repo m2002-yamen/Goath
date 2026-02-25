@@ -86,10 +86,14 @@ export default function AdminTable({ regs }: { regs: Reg[] }) {
             try {
                 const res = await fetch("/api/admin/registrations", { cache: "no-store" });
                 if (!res.ok) return;
+
                 const json = await res.json();
                 if (!alive) return;
+
                 setData(json.regs ?? []);
-            } catch { }
+            } catch {
+                // ignore
+            }
         };
 
         tick(); // أول مرة فورًا
