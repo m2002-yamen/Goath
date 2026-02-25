@@ -8,8 +8,11 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "بوابة المساعدات",
+  title: "Ghouth",
   description: "نظام تسجيل طلبات المساعدة",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
