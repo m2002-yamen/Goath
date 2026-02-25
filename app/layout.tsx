@@ -9,9 +9,12 @@ const cairo = Cairo({
 
 export const metadata: Metadata = {
   title: "Ghouth",
-  description: "نظام تسجيل طلبات المساعدة",
+  description: "التسجيل في مؤسسة غوث",
   icons: {
-    icon: "/icon.svg",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
   },
 };
 
